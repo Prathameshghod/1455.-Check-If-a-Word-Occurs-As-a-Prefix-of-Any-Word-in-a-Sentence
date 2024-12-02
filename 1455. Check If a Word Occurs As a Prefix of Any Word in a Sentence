@@ -1,0 +1,25 @@
+Approach 1 Simply cutting out the words till length b 
+
+class Solution:
+    def isPrefixOfWord(self, sentence: str, searchWord: str) -> int:
+        s = sentence.split()
+        b = len(searchWord)
+        c = 0
+        for i in s:
+            c += 1
+            if i[:b] == searchWord:
+                return c
+        return -1
+
+Approach 2 Simply using the in built startswith function to find the of prefix matching with the searchWord 
+
+class Solution:
+    def isPrefixOfWord(self, sentence: str, searchWord: str) -> int:
+        s = sentence.split()
+        b = len(searchWord)
+        c = 0
+        for i in s:
+            c += 1
+            if i.startswith(searchWord):
+                return c
+        return -1
